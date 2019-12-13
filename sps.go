@@ -1,4 +1,4 @@
-package go-h264
+package go_h264
 
 import (
 	"fmt"
