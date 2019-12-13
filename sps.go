@@ -18,6 +18,7 @@ func GetWidthHeight(sps []byte) (w, h int, err error) {
 		spsOffset = 5
 	}
 	s := h264.SequenceParameterSet{}
+	s.ChromaFormatIDC = 1
 	if err := s.UnmarshalBinary(sps[spsOffset:]); err != nil {
 		return 0, 0, err
 	}
@@ -48,4 +49,3 @@ func GetWidthHeight(sps []byte) (w, h int, err error) {
 	}
 	return int(width), int(height), nil
 }
-
